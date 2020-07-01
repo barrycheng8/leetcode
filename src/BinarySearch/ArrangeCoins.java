@@ -1,4 +1,4 @@
-// LC 441
+package BinarySearch;// LC 441
 // Can naively be solved using recursion, which is a slow roughly O(logn) solution.
 // A better implementation uses binary search
 

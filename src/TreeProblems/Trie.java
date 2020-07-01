@@ -2,25 +2,25 @@
 //
 //public class Trie {
 //
-//    Node root;
+//    LinkedListProblems.Node root;
 //
 //    /** Initialize your data structure here. */
 //    public Trie() {
-//        root = new Node();
+//        root = new LinkedListProblems.Node();
 //    }
 //
 //    /** Inserts a word into the trie. */
 //    public void insert(String word) {
 //
 //        if (word.length() == 1)
-//            root.children.putIfAbsent(word.charAt(0), new Node(true));
+//            root.children.putIfAbsent(word.charAt(0), new LinkedListProblems.Node(true));
 //
-//        Node curr = root;
+//        LinkedListProblems.Node curr = root;
 //        for (int i = 0; i < word.length(); i++) {
 //            char c = word.charAt(i);
 //            if (i + 1 == word.length())
 //                curr.children.put(c, )
-//            curr.children.putIfAbsent(c, new Node(false));
+//            curr.children.putIfAbsent(c, new LinkedListProblems.Node(false));
 //            curr = curr.children.get(c);
 //        }
 //        curr.children.get(word.charAt(word.length() - 1)).isCompleteWord = true;
@@ -36,16 +36,16 @@
 //
 //    }
 //
-//    class Node {
-//        HashMap<Character, Node> children;
+//    class LinkedListProblems.Node {
+//        HashMap<Character, LinkedListProblems.Node> children;
 //        boolean isCompleteWord;
 //
-//        public Node(boolean isEndOfWord) {
+//        public LinkedListProblems.Node(boolean isEndOfWord) {
 //            children = new HashMap<>();
 //            isCompleteWord = isEndOfWord;
 //        }
 //
-//        public Node(char c, boolean isEndOfWord) {
+//        public LinkedListProblems.Node(char c, boolean isEndOfWord) {
 //            children = new HashMap<>();
 //            children.put(c, null);
 //            isCompleteWord = isEndOfWord;

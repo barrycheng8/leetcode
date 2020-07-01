@@ -1,4 +1,4 @@
-// CTCI 1.2
+package ArrayProblems;// CTCI 1.2
 
 import java.util.HashMap;
 import java.util.Map;

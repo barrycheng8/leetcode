@@ -1,3 +1,5 @@
+package ArrayProblems;
+
 public class URLify {
 
     public static String URL(char[] str, int length) {

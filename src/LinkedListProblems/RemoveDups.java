@@ -1,3 +1,5 @@
+package LinkedListProblems;
+
 import java.util.HashSet;
 
 public class RemoveDups {

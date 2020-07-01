@@ -1,3 +1,5 @@
+package LinkedListProblems;
+
 public class KthElement {
 
     // O(n) time: Runner pointer traverses through the entire list to hit null
@@ -31,7 +33,7 @@ public class KthElement {
         head.next = new Node(2);
         head.next.next = new Node(3);
         head.next.next.next = new Node(1);
-        head.next.next.next.next = new Node (1);
+        head.next.next.next.next = new Node(1);
 
         printNodes(head);
 
