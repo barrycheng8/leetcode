@@ -1,4 +1,4 @@
-package HashSetProblems;// LeetCode 957. Prison Cells After N Days
+// LeetCode 957. Prison Cells After N Days
 // Each day, an array of 8 cells gets rearranged with the following rules:
 // 1. If a cell has 2 adjacent neighbors that are both occupied (1) or vacant (0), the cell becomes occupied
 // 2. Otherwise, it becomes vacant. (The side 2 cells will always become vacant
@@ -12,6 +12,8 @@ package HashSetProblems;// LeetCode 957. Prison Cells After N Days
 // in the cycle.
 // O(1) runtime: The maximum loops iterations is 64
 // O(1) space: the maximum amount of elements in the set is 64
+
+package HashSetProblems;
 
 import java.util.Arrays;
 import java.util.HashSet;
