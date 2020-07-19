@@ -1,4 +1,4 @@
-// LeetCode 190. Reverse Bits
+package BitManipulation;// LeetCode 190. Reverse Bits
 // Given a 32 bit unsigned integer, reverse the bits.
 // Intuition: We will mask each bit from n, and bitwise-OR it with the answer, shifted to the position starting from 31.
 // O(1) runtime: We will have a maximum of 32 iterations of the loop
