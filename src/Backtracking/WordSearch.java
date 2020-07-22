@@ -36,13 +36,13 @@ public class WordSearch {
         if (i >= board.length || i < 0 || j >= board[0].length || j < 0) return false;
         if (board[i][j] != word.charAt(idx)) return false;
 
-        board[i][j] = '*';
+        board[i][j] = '*'; // replace the character to prevent reuse in the recursive call
         boolean result = dfs(board, i + 1, j, word, idx + 1) ||
                         dfs(board, i - 1, j, word, idx + 1) ||
                         dfs(board, i, j + 1, word, idx + 1) ||
                         dfs(board, i, j - 1, word, idx + 1);
 
-        board[i][j] = word.charAt(idx);
+        board[i][j] = word.charAt(idx); // replace the character after using it
         return result;
     }
 
