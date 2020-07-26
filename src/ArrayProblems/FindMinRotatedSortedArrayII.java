@@ -35,6 +35,11 @@ public class FindMinRotatedSortedArrayII {
             }
             else if (nums[mi] > nums[hi]) // min within (mi, hi]
                 lo = mi + 1;
+
+            // We cannot simply return nums[lo] in this case. Let's take example [3, 3, 1, 3]
+            // lo = 3, mi = 3, hi = 3. Although our current pointers show that the array is currently sorted ascending,
+            // We have not checked all elements in between the 3 pointers yet.
+            // Therefore, we slowly decrement hi to ensure that all in between elements are checked.
             else
                 hi--;
         }
@@ -55,7 +60,7 @@ public class FindMinRotatedSortedArrayII {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        int[] arr = {2, 2, 2, 0, 1};
 
         System.out.println(findMinBinarySearch(arr));
     }
