@@ -12,7 +12,7 @@
 // O(1) space: 2 variables are used
 // See: Kadane's Algorithm (maximum subarray)
 
-package ArrayProblems;
+package DP;
 
 public class BestTimeToBuyAndSellStock {
 

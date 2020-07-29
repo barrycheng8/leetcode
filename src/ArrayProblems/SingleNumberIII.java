@@ -13,7 +13,7 @@
 // 3. All we need to know is the right most bit that differs. Then we can segregate the numbers into two groups.
 // 4. We use diff &= -diff to reveal that right most bit
 // 5. We then separate the numbers into two categories, nums where that right most bit is set, and nums that don't have that right most bit set
-// 6. XOR all the nums in those separate categories. The duplicates will cancel each other out, and we will be left with the singlets.
+// 6. XOR all the nums in those separate categories. The duplicates will cancel each other out, and we will be left with the singlets in each group.
 //
 // O(n) runtime: 2 traversals through the array
 // O(1) space: space used is independent of input
