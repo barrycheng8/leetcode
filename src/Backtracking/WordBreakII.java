@@ -48,7 +48,7 @@
  O(2^n) space: In the worst case, we have passed in parameters similar to above, which would lead to 2^(n-1) solutions.
 */
 
-package DP;
+package Backtracking;
 
 import java.util.*;
 
