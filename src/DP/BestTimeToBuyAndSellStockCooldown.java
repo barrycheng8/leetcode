@@ -44,4 +44,30 @@ public class BestTimeToBuyAndSellStockCooldown {
 
         return Math.max(s0[len - 1], s2[len - 1]);
     }
+
+    public int maxProfitEasy(int[] prices) {
+        int len = prices.length;
+
+        // If len < 2, we have no opportunity to buy or sell within time span. Max profit is 0.
+        if (len < 2) return 0;
+
+        // Stores previous best results
+        int[] buy = new int[len];
+        int[] sell = new int[len];
+
+        // Max profit at day 0 if we buy
+        buy[0] = -prices[0];
+        // Max profit at day 1 if we sell. We currently have no stock, so it will be set to 0
+        sell[0] = 0;
+        buy[1] = Math.max(buy[0], -prices[1]);
+        sell[1] = Math.max(sell[0], buy[0] + prices[1]);
+
+        for (int i = 2; i < len; i++) {
+            buy[i] = Math.max(buy[i - 1], sell[i - 2] - prices[i]);
+            sell[i] = Math.max(sell[i - 1], buy[i - 1] + prices[i]);
+        }
+
+        return sell[len - 1];
+    }
+
 }
