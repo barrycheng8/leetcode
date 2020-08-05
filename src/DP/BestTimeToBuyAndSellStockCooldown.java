@@ -4,8 +4,17 @@
 // After you sell a stock, you cannot buy on the next day (1 day cooldown)
 // Ex. [1, 2, 3, 0, 2] maxProfit = 3 , [buy, sell, rest, buy, sell]
 //
-// Intuition: This is a DP problem. Essentially we have 3 states:
-// *** NEED TO REVISIT THIS PROBLEM! 7/29/20 ***
+// Intuition:
+// Use DP and a greedy approach to determine if its best to choose one of these possible states:
+// 1. Currently have no stock. Buy today
+// 2. Currently have stock. The buy price today is better than yesterday, so we scrap yesterday's result
+// 3. Currently have stock. Sell - (previous buy price results in better profit) VS (holding stock)
+// 4. Currently don't have stock, but we check the maxProfit from 2 days ago to see if buying today is good
+//
+// Growth functions:
+// O(n) runtime: We must traverse through the entire array to determine the max possible profit
+// O(n) space: 2 arrays to hold the best buy and sell prices. This can be optimized to O(1) space if we only store the value
+//             from the previous iteration
 
 package DP;
 
@@ -57,16 +66,23 @@ public class BestTimeToBuyAndSellStockCooldown {
 
         // Max profit at day 0 if we buy
         buy[0] = -prices[0];
-        // Max profit at day 1 if we sell. We currently have no stock, so it will be set to 0
+        // Max profit at day 0 if we sell. We currently have no stock, so it will be set to 0
         sell[0] = 0;
+        // See if buying on day 1 results in a better (less negative) price
         buy[1] = Math.max(buy[0], -prices[1]);
+        // Compare buying on day 0 and selling on day 1 beats simply doing nothing
         sell[1] = Math.max(sell[0], buy[0] + prices[1]);
 
+        // Iterate and record best profit values using a Max (greedy) function
         for (int i = 2; i < len; i++) {
+            // Is it better to (hold the current stock using old buy price) or (buy today after 1 day cooldown)
             buy[i] = Math.max(buy[i - 1], sell[i - 2] - prices[i]);
+            // Is it better to (wait with no stock) OR (sell today)?
             sell[i] = Math.max(sell[i - 1], buy[i - 1] + prices[i]);
         }
 
+        // Eventually we want to sell to maximize our profit. The last element in the sell array will have this
+        // value maximized
         return sell[len - 1];
     }
 

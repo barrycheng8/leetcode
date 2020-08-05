@@ -1,4 +1,4 @@
-package BFS;// LeetCode 17. Letter Combinations of a Phone Number
+// LeetCode 17. Letter Combinations of a Phone Number
 // Given a string containing digits from 2-9 inclusive, return all possible letter cominations that the number could represent.
 // The mapping of digits to letters uses the phone button numbers.
 // Example:
@@ -17,6 +17,8 @@ package BFS;// LeetCode 17. Letter Combinations of a Phone Number
 // n is the number of digits that map to 3 letters. m is the number of digits that map to 4 letters. We must iterate through
 // all such letters to build all combinations
 // O(3^n * 4^m) space: Because we need to build 3^n * 4^m solutions, we need to use the same amount of space to store and return it.
+
+package BFS;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
