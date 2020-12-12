@@ -1,3 +1,4 @@
+package ArrayProblems;
 // LeetCode 26. Remove Duplicates from Sorted Array
 
 public class RemoveDuplicatesFromSortedArray {
